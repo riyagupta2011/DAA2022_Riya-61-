@@ -30,3 +30,74 @@ int main()
     }
     else
         cout<<"key is present "<<c;
+        
+ }
+        
+   
+
+
+
+//ques2
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int n,i,j,k;
+    cin>>n;
+    int a[n];
+    cout<<"enter array elements"<<endl;
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            for(k=j+1;k<n;k++)
+            {
+                if(a[i]+a[j]==a[k])
+                {
+                    cout<<i<<j<<k<<endl;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+//ques-3
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int n,i,j,k,c=0;
+    cin>>n;
+    int a[n];
+    cout<<"enter array elements"<<endl;
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    cout<<"enter the value of key"<<endl;
+    cin>>k;
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if((a[i]-a[j]==k)||(a[j]-a[i]==k))
+            c++;
+        }
+    }
+    cout<<c;
+
+}
+        
