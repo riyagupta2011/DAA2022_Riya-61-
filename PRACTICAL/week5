@@ -1,0 +1,115 @@
+ques1
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n,i,j,maxi=0,c;
+    char maxt;
+   cin>>n;
+   char a[n];
+   for(i=0;i<n;i++)
+    cin>>a[i];
+   for(i=0;i<n;i++)
+    {
+        c=0;
+        for(j=i+1;j<n;j++)
+        {
+            if(a[i]==a[j])
+                c++;
+        }
+        if(c>maxi)
+        {
+            maxi=c;
+            maxt=a[i];
+        }
+
+    }
+    cout<<maxt;
+
+
+}
+
+ques2
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n,i,k,j,temp,sum;
+    cout<<"enter number of elements in an array"<<endl;
+    cin>>n;
+    int a[n];
+    cout<<"enter elements of an array"<<endl;
+    for(i=0;i<n;i++)
+    cin>>a[i];
+    cout<<"enter the key element"<<endl;
+    cin>>k;
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n-i;j++)
+            if(a[j]>a[j+1])
+        {
+            temp=a[j];
+            a[j]=a[j+1];
+            a[j+1]=temp;
+        }
+    }
+    i=0;
+    j=n-1;
+    while(((sum)!=k)&&(i!=n-1)&&(j!=0))
+    {
+      sum=a[i]+a[j];
+      if(sum>k)
+        j--;
+      if(sum<k)
+        i++;
+
+    }
+    if((i==(n-1))||(j==0))
+        cout<<"no such element exist";
+    else
+    {
+        cout<<"element are "<<a[i]<<" and"<<a[j];
+    }
+
+
+
+
+}
+
+
+ques3
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n,m,i,j;
+    cout<<"enter size of array1"<<endl;
+    cin>>n;
+    cout<<"enter size of array2"<<endl;
+    cin>>m;
+    int a[n];
+    int b[m];
+    cout<<"enter the elements of array1"<<endl;
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+      cout<<"enter the elements of array2"<<endl;
+    for(i=0;i<m;i++)
+    {
+        cin>>b[i];
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+            {
+              if(a[i]==b[j])
+                {
+                    cout<<a[i]<<endl;
+                }
+
+            }
+    }
+
+
+}
