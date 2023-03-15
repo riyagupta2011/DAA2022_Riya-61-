@@ -1,0 +1,40 @@
+%{
+	#include <stdio.h>
+	#include <string.h>
+	#include <math.h>
+%}
+
+%%
+^[79][0-9]{9}	{printf("Valid mobile number.\n");}
+.*		{printf("Invalid mobile number.\n");}
+%%
+
+int yywrap(){}
+
+int main()
+{
+	yylex();
+	return 0;
+}
+
+
+
+
+%{
+	#include <stdio.h>
+	#include <string.h>
+	#include <math.h>
+%}
+
+%%
+[a-zA-Z][_.a-zA-Z0-9]*[@][a-z]+[\.](com|in)	{printf("Valid email id.\n");}
+.*					{printf("Invalid email id.\n");}
+%%
+
+int yywrap(){}
+
+int main()
+{
+	yylex();
+	return 0;
+}
